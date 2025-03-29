@@ -1,0 +1,101 @@
+<!-- templates/oauth2/register.html -->
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>추가 정보 입력</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #e0eafc, #cfdef3);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .form-container {
+      background-color: #fff;
+      padding: 2.5rem 3rem;
+      border-radius: 16px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 420px;
+      text-align: center;
+    }
+
+    .form-container h2 {
+      margin-bottom: 1.5rem;
+      color: #333;
+    }
+
+    .form-group {
+      margin-bottom: 1.2rem;
+      text-align: left;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 0.4rem;
+      font-weight: bold;
+      color: #555;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 0.6rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 1rem;
+      box-sizing: border-box;
+    }
+
+    .submit-btn {
+      margin-top: 1.5rem;
+      padding: 0.8rem 1.5rem;
+      background-color: #4285f4;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .submit-btn:hover {
+      background-color: #3367d6;
+    }
+  </style>
+</head>
+<body>
+<div class="form-container">
+  <h2>추가 정보 입력</h2>
+  <form action="/oauth2/register" method="post" th:object="${registerDto}">
+    <div class="form-group">
+      <label for="name">이름</label>
+      <input type="text" id="name" th:field="*{name}" required />
+    </div>
+    <div class="form-group">
+      <label for="age">나이</label>
+      <input type="number" id="age" th:field="*{age}" required />
+    </div>
+    <div class="form-group">
+      <label for="height">키 (cm)</label>
+      <input type="number" id="height" th:field="*{height}" required />
+    </div>
+    <div class="form-group">
+      <label for="height">체중 (kg)</label>
+      <input type="number" id="weight" th:field="*{weight}" required />
+    </div>
+    <div class="form-group">
+      <label for="location">지역</label>
+      <input type="text" id="location" th:field="*{location}" required />
+    </div>
+    <button type="submit" class="submit-btn">가입 완료</button>
+  </form>
+</div>
+</body>
+</html>

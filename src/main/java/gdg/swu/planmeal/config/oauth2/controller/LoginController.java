@@ -1,4 +1,4 @@
-package gdg.swu.planmeal.oauth2;
+package gdg.swu.planmeal.config.oauth2.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;

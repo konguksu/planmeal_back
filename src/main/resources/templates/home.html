@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title><!-- templates/home.html -->
+      <!DOCTYPE html>
+      <html lang="ko" xmlns:th="http://www.thymeleaf.org">
+      <head>
+      <meta charset="UTF-8">
+      <title>마이페이지 - PlanMeal</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #fdfbfb, #ebedee);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      background-color: #fff;
+      padding: 2.5rem 3rem;
+      border-radius: 16px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      max-width: 550px;
+      width: 100%;
+      text-align: center;
+    }
+
+    .avatar {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background-image: url('https://www.w3schools.com/howto/img_avatar.png');
+      background-size: cover;
+      background-position: center;
+      margin: 0 auto 1rem;
+    }
+
+    h2 {
+      margin-bottom: 0.5rem;
+    }
+
+    .profile-info {
+      text-align: left;
+      margin-top: 1.5rem;
+    }
+
+    .info-item {
+      margin-bottom: 1rem;
+    }
+
+    .label {
+      font-weight: bold;
+      color: #555;
+      display: inline-block;
+      width: 80px;
+    }
+
+    .value {
+      color: #222;
+    }
+
+    .section-title {
+      margin-top: 2rem;
+      font-size: 1.1rem;
+      color: #444;
+      border-top: 1px solid #ddd;
+      padding-top: 1rem;
+    }
+
+    .meal-summary {
+      background-color: #f5f7fa;
+      border-radius: 10px;
+      padding: 1rem;
+      text-align: left;
+      margin-top: 1rem;
+    }
+
+    .btn-group {
+      margin-top: 2rem;
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+    }
+
+    .btn {
+      padding: 0.6rem 1.4rem;
+      border: none;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+
+    .logout-btn {
+      background-color: #ff5c5c;
+      color: white;
+    }
+
+    .logout-btn:hover {
+      background-color: #e64e4e;
+    }
+
+    .edit-btn {
+      background-color: #4caf50;
+      color: white;
+    }
+
+    .edit-btn:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <div class="avatar"></div>
+  <h2 th:text="${member.name}">홍길동</h2>
+  <p th:text="${member.email}">email@example.com</p>
+
+  <div class="profile-info">
+    <div class="info-item"><span class="label">나이:</span> <span class="value" th:text="${member.age}">25</span></div>
+    <div class="info-item"><span class="label">키:</span> <span class="value" th:text="${member.height}">170</span> cm</div>
+    <div class="info-item"><span class="label">지역:</span> <span class="value" th:text="${member.location}">서울</span></div>
+  </div>
+
+  <div class="section-title">📋 최근 식단 요약</div>
+  <div class="meal-summary">
+    <p>🍚 오늘의 식단: <strong>현미밥, 계란찜, 샐러드</strong></p>
+    <p>🔥 예상 칼로리: <strong>520 kcal</strong></p>
+    <p>📅 최근 기록: <strong>2025-03-30</strong></p>
+  </div>
+
+  <div class="btn-group">
+    <form action="/logout" method="post">
+      <button class="btn logout-btn" type="submit">로그아웃</button>
+    </form>
+    <form action="/mypage/edit" method="get">
+      <button class="btn edit-btn" type="submit">회원정보 수정</button>
+    </form>
+  </div>
+</div>
+</body>
+</html>
+</title>
+</head>
+<body>
+
+</body>
+</html>
